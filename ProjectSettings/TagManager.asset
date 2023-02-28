@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - 'health '
+  - potion
+  - mana
+  - Ground
+  - Enemy
+  - Knockout
+  - Enemy, Knockout
+  - Enemy,Knockout
+  - Player,Knockout
+  - Ally,Knockout
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - 
+  - player
+  - Enemies
+  - Ally
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 857089353
+    locked: 0
+  - name: scene
+    uniqueID: 3656928457
+    locked: 0
+  - name: ground
+    uniqueID: 1069113315
+    locked: 0
+  - name: player
+    uniqueID: 495860211
+    locked: 0
