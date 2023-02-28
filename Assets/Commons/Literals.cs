@@ -31,5 +31,10 @@
             Attack
         }
 
+        public enum DAMAGE_LIST
+        {
+            common_enemy,
+            spikes
+        }
     }
 }
