@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
+using Assets.Commons;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -9,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     public int player_mana = 50;
     public int damage;
     Animator animator;
+
+    private Dictionary<string, int> damage_list;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +21,9 @@ public class PlayerStats : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        damage_list = new Dictionary<string, int>();
+        damage_list.Add(Literals.DAMAGE_LIST.common_enemy.ToString(), 20);
+        damage_list.Add(Literals.DAMAGE_LIST.spikes.ToString(), 10);
         Console.WriteLine("Current Heath: " + player_health);
         Console.WriteLine("Current Mana: " + player_mana);
     }
@@ -25,6 +33,30 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
+
+    public void Taking_Damage(string contact)
+    {
+        if (damage_list != null)
+        {
+            if (damage_list.ContainsKey(contact))
+            {
+                int damage = damage_list[contact];
+                if (damage >= player_health)
+                {
+                    /*Player Death*/
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    player_health = 100;
+
+                }
+                else if (damage < player_health && player_health != 0)
+                {
+                    player_health = player_health - damage;
+                    Debug.Log($"Got hit by {contact}, {player_health} of life left");
+                }
+            }
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

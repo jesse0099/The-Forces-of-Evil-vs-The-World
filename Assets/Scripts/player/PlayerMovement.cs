@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Commons;
+using static Assets.Commons.Literals;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform attackPoint;
     SpriteRenderer sr;
     public LayerMask enemyLayers;
+    PlayerStats stats;
 
     private float xAxis;
     private float yAxis;
@@ -38,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #endregion
+
+    private void Awake()
+    {
+        stats = GameObject.Find("player").GetComponent<PlayerStats>();
+    }
 
     void Start()
     {
@@ -216,6 +224,20 @@ public class PlayerMovement : MonoBehaviour
             HurtBegin();
 
             Debug.Log($"Hitted");
+
+            stats.Taking_Damage(Literals.DAMAGE_LIST.common_enemy.ToString());
+
+            Vector2 hitted_on = (collision.transform.position - transform.position).normalized;
+            rb2d.position -= new Vector2(hitted_on.x, hitted_on.y);
+
+            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.hurt.ToString());
+
+            Invoke("HurtComplete", damageDelay);
+        }else if (tags.Contains("Spike"))
+        {
+            HurtBegin();
+            /* Calls stats to lower Health According to Collision*/
+            stats.Taking_Damage(Literals.DAMAGE_LIST.spikes.ToString());
 
             Vector2 hitted_on = (collision.transform.position - transform.position).normalized;
             rb2d.position -= new Vector2(hitted_on.x, hitted_on.y);
