@@ -1,6 +1,5 @@
+using Assets.Scripts.Enemies;
 using System;
-using System.Collections.Generic;
-using Assets.Commons;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,20 +7,19 @@ public class PlayerStats : MonoBehaviour
 {
     Rigidbody2D rb;
     SpriteRenderer sr;
-    public int player_health = 50;
-    public int player_mana = 50;
+    public int player_health;
+    public int player_mana;
     public int damage;
     Animator animator;
 
     public HealthBar healthBar;
-    public int maxHealth = 100;
+    public int maxHealth;
     public ManaBar manaBar;
-    public int maxMana = 100;
+    public int maxMana;
 
     public Points score;
-    public int actualPoints = 0;
+    public int actualPoints;
 
-    private Dictionary<string, int> damage_list;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,42 +27,24 @@ public class PlayerStats : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        damage_list = new Dictionary<string, int>();
-        damage_list.Add(Literals.DAMAGE_LIST.common_enemy.ToString(), 20);
-        damage_list.Add(Literals.DAMAGE_LIST.spikes.ToString(), 10);
-        Console.WriteLine("Current Heath: " + player_health);
-        Console.WriteLine("Current Mana: " + player_mana);
-
+        //init health
         player_health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-
+        //init mana
         player_mana = maxMana;
         manaBar.SetMaxMana(maxMana);
-
+        //init points
         score.SetPoints(actualPoints);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10);
-            SpendMana(20);
-        }
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SumPoints(20);
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SubPoints(40);
-        }
     }
 
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         player_health -= damage;
         if (player_health <= 0)
@@ -79,7 +59,7 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    void Heal(int heal)
+    public void Health(int heal)
     {
         player_health += heal;
 
@@ -94,7 +74,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void SpendMana(int mana)
+    public void SpendMana(int mana)
     {
         player_mana -= mana;
 
@@ -109,7 +89,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void RecoverMana(int mana)
+    public void RecoverMana(int mana)
     {
         player_mana += mana;
 
@@ -124,13 +104,13 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void SumPoints(int points)
+    public void SumPoints(int points)
     {
         actualPoints += points;
         score.SetPoints(actualPoints);
     }
 
-    void SubPoints(int points)
+    public void SubPoints(int points)
     {
         actualPoints -= points;
 
@@ -145,27 +125,21 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void Taking_Damage(string contact)
+    public void Taking_Damage(EnemyStats enemyStats)
     {
-        if (damage_list != null)
-        {
-            if (damage_list.ContainsKey(contact))
-            {
-                int damage = damage_list[contact];
-                if (damage >= player_health)
-                {
-                    /*Player Death*/
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                    player_health = 100;
+        int damage = enemyStats.damage;
+        
+        if (damage >= player_health) {
+            TakeDamage(damage);
+            //Play death animation
 
-                }
-                else if (damage < player_health && player_health != 0)
-                {
-                    player_health = player_health - damage;
-                    Debug.Log($"Got hit by {contact}, {player_health} of life left");
-                }
-            }
-        }
+            //Player Death
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Checkpoint return
+            Health(maxHealth);
+            RecoverMana(maxMana);
+       
+        } else if (damage < player_health && player_health != 0)
+            TakeDamage(damage);
     }
 
 
@@ -173,19 +147,13 @@ public class PlayerStats : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("potion"))
         {
-            Console.WriteLine("Player Restored Health");
-            player_health= 100;
+            Health(maxHealth);
             Destroy(collision.gameObject);
-            Console.WriteLine("Current Heath: " + player_health);
-            Console.WriteLine("Current Mana: " + player_mana);
         }
         if (collision.gameObject.CompareTag("mana"))
         {
-            Console.WriteLine("Player Restored Mana");
-            player_mana= 100;
+            RecoverMana(maxMana);
             Destroy(collision.gameObject);
-            Console.WriteLine("Current Heath: " + player_health);
-            Console.WriteLine("Current Mana: " + player_mana);
         }
     }
 }

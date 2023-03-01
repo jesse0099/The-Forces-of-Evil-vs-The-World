@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Enemies.Hero_Knight
+namespace Assets.Scripts.Enemies
 {
     public class EnemyStats : MonoBehaviour
     {

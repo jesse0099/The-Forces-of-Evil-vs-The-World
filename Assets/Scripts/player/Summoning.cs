@@ -34,7 +34,7 @@ public class Summoning : MonoBehaviour
         //Apply mana cost on invocation
         if (summonerStats.player_mana - manaCost < 0) return;
 
-        summonerStats.player_mana -= manaCost;
+        summonerStats.SpendMana(manaCost);
 
         //Instantiate the summoned ally
         allyInstance = Instantiate(allyPrefab, transform.position +

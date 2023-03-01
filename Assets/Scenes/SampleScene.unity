@@ -7924,10 +7924,10 @@ CompositeCollider2D:
   - m_Collider: {fileID: 197336555}
     m_ColliderPaths:
     - - X: 62346448
-        Y: -10112844
-      - X: -68538568
-        Y: -10112844
-      - X: -68538568
+        Y: -10342453
+      - X: -68488528
+        Y: -10342453
+      - X: -68488528
         Y: -16417210
       - X: 62346448
         Y: -16417210
@@ -7935,9 +7935,15 @@ CompositeCollider2D:
     m_Paths:
     - - {x: 13.2295065, y: -1.767168}
       - {x: 13.2295065, y: -1.0308479}
-      - {x: 6.234645, y: -1.0308185}
-      - {x: 6.234616, y: -1.0112845}
-      - {x: -5.4193277, y: -1.011255}
+      - {x: 6.2162876, y: -1.0308772}
+      - {x: 6.2162585, y: -1.0342453}
+      - {x: 5.738112, y: -1.0342159}
+      - {x: 5.738083, y: -1.0308479}
+      - {x: -5.4193287, y: -1.0308772}
+      - {x: -5.419358, y: -1.0342453}
+      - {x: -5.4256206, y: -1.0342385}
+      - {x: -5.4291964, y: -1.030848}
+      - {x: -5.4193277, y: -1.0308187}
       - {x: -5.419357, y: -0.89278793}
       - {x: -5.57872, y: -0.8928172}
       - {x: -5.5787396, y: -0.9572221}
@@ -7959,11 +7965,17 @@ CompositeCollider2D:
       - {x: -6.2462034, y: -0.883584}
       - {x: -6.3159127, y: -0.8835863}
       - {x: -6.37568, y: -0.9112134}
-      - {x: -6.3757095, y: -1.0112845}
-      - {x: -6.853857, y: -1.0113137}
-      - {x: -6.8538866, y: -1.0308479}
+      - {x: -6.3757095, y: -1.0308479}
       - {x: -11.316832, y: -1.0308772}
       - {x: -11.316802, y: -1.767168}
+    - - {x: -5.738112, y: -1.0342159}
+      - {x: -5.7444043, y: -1.0342385}
+      - {x: -5.7479806, y: -1.030848}
+      - {x: -5.738112, y: -1.0308775}
+    - - {x: -6.0568967, y: -1.0342159}
+      - {x: -6.0631886, y: -1.0342385}
+      - {x: -6.0667644, y: -1.030848}
+      - {x: -6.0568967, y: -1.0308775}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &197336553
@@ -8016,7 +8028,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -0.3107872, y: -1.4412241}
+  m_Offset: {x: -0.3082757, y: -1.4536974}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8027,7 +8039,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.138428, y: 0.6849593}
+  m_Size: {x: 13.133405, y: 0.6600126}
   m_EdgeRadius: 0
 --- !u!1001 &207836244
 PrefabInstance:
@@ -9190,6 +9202,7 @@ GameObject:
   - component: {fileID: 962425900}
   - component: {fileID: 962425899}
   - component: {fileID: 962425898}
+  - component: {fileID: 962425901}
   m_Layer: 9
   m_Name: Spikes
   m_TagString: Spike
@@ -9290,6 +9303,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &962425901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962425897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9bc18c39bbd1204f9838a3c9df50a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  damage: 10
+  canDamage: 0
+  deathAnimation: 
 --- !u!1 &1048651766
 GameObject:
   m_ObjectHideFlags: 0
@@ -14183,11 +14212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffa733b50464ed4a8d08c538559de59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_health: 50
+  player_health: 200
   player_mana: 50
   damage: 12
   healthBar: {fileID: 877306703}
-  maxHealth: 100
+  maxHealth: 200
   manaBar: {fileID: 1265773520}
   maxMana: 100
   score: {fileID: 418933869}

@@ -1,8 +1,7 @@
+using Assets.Commons;
+using Assets.Scripts.Enemies;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Commons;
-using static Assets.Commons.Literals;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float attackRange = 0.5f;
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float summonDelay = 0.3f;
-    [SerializeField] private float damageDelay = 1f;
+    [SerializeField] private float damageDelay = 0.6f;
 
     private string currentAnimaton;
 
@@ -128,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
             if (!isSummoning)
             {
                 isSummoning = true;
-                
+
                 ChangeAnimationState(Literals.PLAYER_ANIMATIONS.summon.ToString());
 
                 Invoke("SummonComplete", summonDelay);
@@ -200,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
     void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;
-        
+
         animator.Play(newAnimation);
         currentAnimaton = newAnimation;
     }
@@ -219,13 +218,11 @@ public class PlayerMovement : MonoBehaviour
 
         var tags = new List<string>(collision.gameObject.tag.Split(","));
 
-        if (tags.Contains("Enemy"))
+        if (tags.Contains("Enemy") || tags.Contains("Spike") && !isBeingHurted)
         {
             HurtBegin();
-
-            Debug.Log($"Hitted");
-
-            stats.Taking_Damage(Literals.DAMAGE_LIST.common_enemy.ToString());
+            //var enemyStats = collision.gameObject.GetComponent<EnemyStats>();
+            //stats.Taking_Damage(enemyStats);
 
             Vector2 hitted_on = (collision.transform.position - transform.position).normalized;
             rb2d.position -= new Vector2(hitted_on.x, hitted_on.y);
@@ -233,18 +230,7 @@ public class PlayerMovement : MonoBehaviour
             ChangeAnimationState(Literals.PLAYER_ANIMATIONS.hurt.ToString());
 
             Invoke("HurtComplete", damageDelay);
-        }else if (tags.Contains("Spike"))
-        {
-            HurtBegin();
-            /* Calls stats to lower Health According to Collision*/
-            stats.Taking_Damage(Literals.DAMAGE_LIST.spikes.ToString());
 
-            Vector2 hitted_on = (collision.transform.position - transform.position).normalized;
-            rb2d.position -= new Vector2(hitted_on.x, hitted_on.y);
-
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.hurt.ToString());
-
-            Invoke("HurtComplete", damageDelay);
         }
     }
     #endregion
