@@ -96,12 +96,16 @@ public class HeroKnightMovement : MonoBehaviour
             //Damaging player
             if (tags.Contains("Player"))
                 playerStats.Taking_Damage(stats);
-            
-            //Allies death management
-            if (allyStats.health <= 0) {
-                //Avoid death body to cause damage //Ally
-                allyStats.damage = 0;
-                Destroy(collision.gameObject, 1f);
+
+            if (allyStats != null)
+            {
+                //Allies death management
+                if (allyStats.health <= 0)
+                {
+                    //Avoid death body to cause damage //Ally
+                    allyStats.damage = 0;
+                    Destroy(collision.gameObject, 1f);
+                }
             }
 
             Invoke("AttackCompleted", attackDelay);

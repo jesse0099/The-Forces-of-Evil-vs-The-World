@@ -47,7 +47,7 @@ public class Summoning : MonoBehaviour
         //Setting death animation
         invocationStats.deathAnimation = Literals.ALLY_SKELETON_ANIMATIONS.
             ally_skeleton_clothed_death.ToString();
-        invocationStats.damage = 8;
+        invocationStats.damage = 4;
 
         //Adding InvocationMovement
         var invocationMovement = allyInstance.AddComponent<InvocationMovement>();

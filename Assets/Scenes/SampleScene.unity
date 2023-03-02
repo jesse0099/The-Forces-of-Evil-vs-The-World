@@ -9203,6 +9203,7 @@ GameObject:
   - component: {fileID: 962425899}
   - component: {fileID: 962425898}
   - component: {fileID: 962425901}
+  - component: {fileID: 962425902}
   m_Layer: 9
   m_Name: Spikes
   m_TagString: Spike
@@ -9319,6 +9320,20 @@ MonoBehaviour:
   damage: 10
   canDamage: 0
   deathAnimation: 
+--- !u!114 &962425902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962425897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa42d17b95db7d479dadefcfa6a06dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  attackDelay: 0.1
 --- !u!1 &1048651766
 GameObject:
   m_ObjectHideFlags: 0
@@ -9918,7 +9933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bc18c39bbd1204f9838a3c9df50a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 100
   damage: 12
   canDamage: 0
   deathAnimation: Death
@@ -14196,7 +14211,7 @@ MonoBehaviour:
     m_Bits: 512
   walkSpeed: 5
   jumpForce: 180
-  attackRange: 0.5
+  attackRange: 0.6
   attackDelay: 0.3
   summonDelay: 0.3
   damageDelay: 0.3

@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //space Atatck key pressed?
-        if (Input.GetKeyDown(KeyCode.RightControl))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             isAttackPressed = true;
         }
@@ -151,7 +151,8 @@ public class PlayerMovement : MonoBehaviour
                     ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString());
                 else
                     ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString()); // Future air attack
-
+        
+                AttackingLogic();
                 Invoke("AttackComplete", attackDelay);
             }
         }
@@ -164,6 +165,8 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
+            var enemyStats = enemy.GetComponent<EnemyStats>();
+            enemyStats.health -= stats.damage;
             /* Logica de dañar Enemigos */
             Debug.Log("hit");
         }
@@ -171,7 +174,6 @@ public class PlayerMovement : MonoBehaviour
 
     void AttackComplete()
     {
-        AttackingLogic();
         isAttacking = false;
     }
 
