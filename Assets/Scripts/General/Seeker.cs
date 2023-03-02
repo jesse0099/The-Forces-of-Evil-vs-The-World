@@ -19,7 +19,7 @@ public class Seeker : MonoBehaviour
     [SerializeField] private float huntSpeed = 5f;
     [SerializeField] private float jumpForce = 1f;
     [SerializeField] private float rayCastDistance = 1f;
-    [SerializeField] private LayerMask obstacleLayer;
+    public LayerMask obstacleLayer;
 
     Animator animator;
     Rigidbody2D rigidBody;

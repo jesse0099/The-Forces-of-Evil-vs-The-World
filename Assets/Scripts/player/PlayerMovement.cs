@@ -1,4 +1,5 @@
 using Assets.Commons;
+using Assets.Scripts.Enemies;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -169,10 +170,9 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             var enemyStats = enemy.GetComponent<EnemyStats>();
-            enemyStats.health -= stats.damage;
+            if (enemyStats != null)
+                enemyStats.health -= stats.damage;
             attackAudio.Play();
-            /* Logica de da�ar Enemigos */
-            Debug.Log("hit");
         }
     }
 

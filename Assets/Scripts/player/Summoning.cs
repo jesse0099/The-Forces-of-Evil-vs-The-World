@@ -53,6 +53,9 @@ public class Summoning : MonoBehaviour
         var invocationMovement = allyInstance.AddComponent<InvocationMovement>();
         invocationMovement.attackDelay = 0.3f;
 
+        //Getting hunter script
+        //var invocationHuntBehavior = allyInstance.GetComponent<Seeker>();
+        //invocationHuntBehavior.obstacleLayer = 3;
 
         allyAnimator = allyInstance.GetComponent<Animator>();
         allyRenderer = allyInstance.GetComponent<SpriteRenderer>();
