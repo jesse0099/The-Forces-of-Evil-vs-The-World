@@ -1,5 +1,4 @@
 using Assets.Commons;
-using Assets.Scripts.Enemies;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -154,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
                     ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString());
                 else
                     ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString()); // Future air attack
-                
+                                    
                 AttackingLogic();
                 swingAudio.Play();
                 Invoke("AttackComplete", attackDelay);
@@ -172,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
             var enemyStats = enemy.GetComponent<EnemyStats>();
             enemyStats.health -= stats.damage;
             attackAudio.Play();
-            /* Logica de dañar Enemigos */
+            /* Logica de daï¿½ar Enemigos */
             Debug.Log("hit");
         }
     }
