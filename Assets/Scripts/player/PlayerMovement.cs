@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sr;
     public LayerMask enemyLayers;
     PlayerStats stats;
+    public AudioSource attackAudio;
+    public AudioSource summonAudio;
+    public AudioSource swingAudio;
 
     private float xAxis;
     private float yAxis;
@@ -129,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
                 isSummoning = true;
 
                 ChangeAnimationState(Literals.PLAYER_ANIMATIONS.summon.ToString());
-
+                summonAudio.Play();
                 Invoke("SummonComplete", summonDelay);
             }
         }
@@ -151,8 +154,9 @@ public class PlayerMovement : MonoBehaviour
                     ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString());
                 else
                     ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString()); // Future air attack
-        
+                
                 AttackingLogic();
+                swingAudio.Play();
                 Invoke("AttackComplete", attackDelay);
             }
         }
@@ -167,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
         {
             var enemyStats = enemy.GetComponent<EnemyStats>();
             enemyStats.health -= stats.damage;
+            attackAudio.Play();
             /* Logica de dañar Enemigos */
             Debug.Log("hit");
         }

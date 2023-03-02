@@ -20,6 +20,9 @@ public class PlayerStats : MonoBehaviour
     public Points score;
     public int actualPoints;
 
+    public AudioSource healAudio;
+    public AudioSource manaAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -148,11 +151,13 @@ public class PlayerStats : MonoBehaviour
         if (collision.gameObject.CompareTag("potion"))
         {
             Health(maxHealth);
+            healAudio.Play();
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("mana"))
         {
             RecoverMana(maxMana);
+            manaAudio.Play();
             Destroy(collision.gameObject);
         }
     }
