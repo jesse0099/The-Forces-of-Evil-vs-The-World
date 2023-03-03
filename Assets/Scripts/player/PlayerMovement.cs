@@ -1,4 +1,3 @@
-using Assets.Commons;
 using Assets.Scripts.Enemies;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +25,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float summonDelay = 0.3f;
     [SerializeField] private float damageDelay = 0.6f;
 
+    [SerializeField] public string RUN_ANIM;
+    [SerializeField] public string STAND_ANIM;
+    [SerializeField] private string JUMP_ANIM;
+    [SerializeField] private string HURT_ANIM;
+    [SerializeField] private string SUMMON_ANIM;
+    [SerializeField] private string ATTACK_ANIM;
+    [SerializeField] private string STOP_ANIM;
+
     private string currentAnimaton;
 
     private bool isGrounded;
@@ -46,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        stats = GameObject.Find("player").GetComponent<PlayerStats>();
+        stats = this.GetComponent<PlayerStats>();
     }
 
     void Start()
@@ -62,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         xAxis = Input.GetAxisRaw("Horizontal");
 
         //space jump key pressed?
-        if (Input.GetKeyDown(KeyCode.Space))
+         if (Input.GetKeyDown(KeyCode.Space))
         {
             isJumpPressed = true;
         }
@@ -89,11 +96,13 @@ public class PlayerMovement : MonoBehaviour
         //Check update movement based on input
         Vector2 vel = new(0, rb2d.velocity.y);
 
+        //Julius works with true + false
+        //Original player works with false + false
         if (xAxis < 0 && !isBeingHurted)
         {
             vel.x = -walkSpeed;
             transform.localScale = new Vector2(-1, 1);
-            sr.flipX = false;
+            sr.flipX = true;
         }
         else if (xAxis > 0 && !isBeingHurted)
         {
@@ -107,9 +116,9 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && !isAttacking && !isBeingHurted && !isSummoning)
         {
             if (xAxis != 0)
-                ChangeAnimationState(Literals.PLAYER_ANIMATIONS.run.ToString());
+                ChangeAnimationState(RUN_ANIM);
             else
-                ChangeAnimationState(Literals.PLAYER_ANIMATIONS.idle.ToString());
+                ChangeAnimationState(STAND_ANIM);
         }
 
         //------------------------------------------
@@ -119,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
             isJumpPressed = false;
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.jump.ToString());
+            ChangeAnimationState(JUMP_ANIM);
         }
 
         //Check if trying to summon
@@ -131,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 isSummoning = true;
 
-                ChangeAnimationState(Literals.PLAYER_ANIMATIONS.summon.ToString());
+                ChangeAnimationState(SUMMON_ANIM);
                 summonAudio.Play();
                 Invoke("SummonComplete", summonDelay);
             }
@@ -151,9 +160,9 @@ public class PlayerMovement : MonoBehaviour
                 isAttacking = true;
 
                 if (isGrounded)
-                    ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString());
+                    ChangeAnimationState(ATTACK_ANIM);
                 else
-                    ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString()); // Future air attack
+                    ChangeAnimationState(ATTACK_ANIM); // Future air attack
                                     
                 AttackingLogic();
                 swingAudio.Play();
@@ -191,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
         isBeingHurted = false;
         //Change animation to jump when the player is mid air
         if (!isGrounded)
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.jump.ToString());
+            ChangeAnimationState(JUMP_ANIM);
     }
 
     void HurtBegin()
@@ -233,7 +242,7 @@ public class PlayerMovement : MonoBehaviour
             Vector2 hitted_on = (collision.transform.position - transform.position).normalized;
             rb2d.position -= new Vector2(hitted_on.x, hitted_on.y);
 
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.hurt.ToString());
+            ChangeAnimationState(HURT_ANIM);
 
             Invoke("HurtComplete", damageDelay);
 

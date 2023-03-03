@@ -129,8 +129,8 @@ TextureImporter:
       name: Julius_Belmont-removebg_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 414
+        x: 33
+        y: 413
         width: 24
         height: 37
       alignment: 0
@@ -177,139 +177,13 @@ TextureImporter:
         height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 0, z: 0, w: 1}
+      border: {x: 2, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: b8678a871a99b1545ac65cba1d2899b3
       internalID: -2035844858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Julius_Belmont-removebg_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 415
-        width: 42
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bc832e8585a03145bc842633dc52099
-      internalID: -1840359808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Julius_Belmont-removebg_5
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 415
-        width: 69
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6da10551019e0347868dbc11d23a948
-      internalID: 929180439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Julius_Belmont-removebg_6
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 415
-        width: 69
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 4}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b95ffbbb19d9ec47908d7df7ca63aac
-      internalID: 937843475
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Julius_Belmont-removebg_7
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 415
-        width: 56
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38d07982cd41ca1448bff80487db5745
-      internalID: 892213895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Julius_Belmont-removebg_8
-      rect:
-        serializedVersion: 2
-        x: 376
-        y: 415
-        width: 27
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: decad1ea062afc3428daf64f8a47fd42
-      internalID: 1125437635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Julius_Belmont-removebg_9
-      rect:
-        serializedVersion: 2
-        x: 405
-        y: 415
-        width: 21
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab3fe912b3b5dca418a59b40232283e7
-      internalID: 1598914582
       vertices: []
       indices: 
       edges: []
@@ -323,7 +197,7 @@ TextureImporter:
         width: 14
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,7 +218,7 @@ TextureImporter:
         width: 13
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -365,7 +239,7 @@ TextureImporter:
         width: 17
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -386,7 +260,7 @@ TextureImporter:
         width: 16
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -394,6 +268,762 @@ TextureImporter:
       bones: []
       spriteID: 0fcf2e1d25dd54b4aa15afae5736794e
       internalID: -205444507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 558
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69a8d49f3f6c1d46857a3a5fedc6c30
+      internalID: 1007754737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_15
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 558
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dff64f18b729a546b05c986c98f336c
+      internalID: -427984348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_16
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 558
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e23d60d0a362144d95bfa0b917fd624
+      internalID: 1508693722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_17
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 558
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e634245bfdab01e408f8cc7b59f6dedc
+      internalID: 1087378468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_18
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 558
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1457159f355a5f943979f03849652e9a
+      internalID: -2040649851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_19
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 558
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 2, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb6d3f359658a7498bd9b066e470f42
+      internalID: 187574447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_20
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 558
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0cda6bd711b954d833a1adf37bbf8f
+      internalID: 954520168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_21
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 558
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17fe59c335ebae44b09c65016151c65
+      internalID: -750711963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_22
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 558
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e9b262c9347be499cf655efb422f70
+      internalID: 1936931213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_23
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 558
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92347fb3dac3d2429e3e93a8a2c5a1c
+      internalID: -822467170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 492
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82ef364534bf8f4d874c847015fa30c
+      internalID: 1555507911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 492
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a528121eca34c418dfb5a538b8ba96
+      internalID: -1927147009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_26
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 488
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e12848b64a4de4bac0662ccd867c0c
+      internalID: 802768018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_27
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 488
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dba63dfb6a41a048b0fafffcdf28767
+      internalID: 464826072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_28
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 488
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d2cd70bf0fc2548b393409f0908c2f
+      internalID: 1759902109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_29
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 488
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f245899210e3141941418a27a2cfd9
+      internalID: 1364444174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_30
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 488
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0161317cc985614d91381c8aa79bca2
+      internalID: -1412920763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 414
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324ecd9f03887584995cb857b5eeee07
+      internalID: -1840359808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 415
+        width: 71
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c69b521f100944b9b45097d3c8e5d0
+      internalID: 929180439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_6
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 415
+        width: 70
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c6e9e77949f75469288631b7113d03
+      internalID: 937843475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_7
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 416
+        width: 60
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 2, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f235b67dba40d47b622c4fc26cbe69
+      internalID: 892213895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_8
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 416
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7909a88314ed904b98b2317fc19c923
+      internalID: 1125437635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_9
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 416
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a21a31a2dafb1f4380410ae8d421a1f
+      internalID: -130845192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_31
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 557
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50d822dcce0a30479139afbed5d41ac
+      internalID: -830264336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_32
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 558
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddaeb4ae4f718c9439efc0ddee5a2cee
+      internalID: -1032228260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_33
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 559
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540c7ae9b5607054793033b82d8a3540
+      internalID: 1657690643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_34
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 558
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e62afd69dde8c41ad4b635ca341a52
+      internalID: -1883461116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_35
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 557
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d7c2490cf01854ab8a3976b329234e
+      internalID: -206597162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_36
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 557
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8b4d19af7d50a4fbc25aebb812c47d
+      internalID: -2115308524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_37
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 557
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b188f96cd55dc41b401c444c8c8d91
+      internalID: -48465044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_38
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 557
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ade94816674404caeaa9ad781d8cec
+      internalID: 616361742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_39
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 252
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37e4c2e23d74264b9009abf06df21d4
+      internalID: -1368824578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_40
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 252
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65793bdaba7b771428d7f8a9922c7881
+      internalID: 1434690430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_41
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 251
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf35474a94bba742ab81604453ed90f
+      internalID: 655767407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_42
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 251
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb98df57c807f048a5a990a92670ac3
+      internalID: 115069321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Julius_Belmont-removebg_43
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 489
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4867cc4938b805e40b5de38b2df77129
+      internalID: 996012013
       vertices: []
       indices: 
       edges: []
@@ -409,20 +1039,50 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Julius_Belmont-removebg_25: -1927147009
       Julius_Belmont-removebg_7: 892213895
+      Julius_Belmont-removebg_39: -1368824578
       Julius_Belmont-removebg_1: 1414183236
-      Julius_Belmont-removebg_5: 929180439
+      Julius_Belmont-removebg_37: -48465044
+      Julius_Belmont-removebg_17: 1087378468
+      Julius_Belmont-removebg_14: 1007754737
+      Julius_Belmont-removebg_35: -206597162
+      Julius_Belmont-removebg_20: 954520168
       Julius_Belmont-removebg_12: -44664048
-      Julius_Belmont-removebg_0: -1460248783
-      Julius_Belmont-removebg_13: -205444507
+      Julius_Belmont-removebg_18: -2040649851
+      Julius_Belmont-removebg_40: 1434690430
+      Julius_Belmont-removebg_43: 996012013
       Julius_Belmont-removebg_9: -130845192
       Julius_Belmont-removebg_2: -524374865
-      Julius_Belmont-removebg_10: 1179838580
+      Julius_Belmont-removebg_28: 1759902109
       Julius_Belmont-removebg_4: -1840359808
-      Julius_Belmont-removebg_8: 1125437635
+      Julius_Belmont-removebg_32: -1032228260
       Julius_Belmont-removebg_6: 937843475
       Julius_Belmont-removebg_11: 733511381
+      Julius_Belmont-removebg_30: -541777699
+      Julius_Belmont-removebg_29: 1364444174
+      Julius_Belmont-removebg_42: 115069321
+      Julius_Belmont-removebg_15: -427984348
       Julius_Belmont-removebg_3: -2035844858
+      Julius_Belmont-removebg_27: 464826072
+      Julius_Belmont-removebg_21: -750711963
+      Julius_Belmont-removebg_19: 187574447
+      Julius_Belmont-removebg_5: 929180439
+      Julius_Belmont-removebg_23: -822467170
+      Julius_Belmont-removebg_36: -2115308524
+      Julius_Belmont-removebg_41: 655767407
+      Julius_Belmont-removebg_22: 1936931213
+      Julius_Belmont-removebg_0: -1460248783
+      Julius_Belmont-removebg_34: -1883461116
+      Julius_Belmont-removebg_33: 1657690643
+      Julius_Belmont-removebg_24: 1555507911
+      Julius_Belmont-removebg_13: -205444507
+      Julius_Belmont-removebg_10: 1179838580
+      Julius_Belmont-removebg_26: 802768018
+      Julius_Belmont-removebg_8: 1125437635
+      Julius_Belmont-removebg_16: 1508693722
+      Julius_Belmont-removebg_31: -830264336
+      Julius_Belmont-removebg_38: 616361742
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
