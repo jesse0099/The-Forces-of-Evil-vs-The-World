@@ -58,6 +58,9 @@ TagManager:
   - name: scene
     uniqueID: 3656928457
     locked: 0
+  - name: Elements
+    uniqueID: 3195437007
+    locked: 0
   - name: ground
     uniqueID: 1069113315
     locked: 0
