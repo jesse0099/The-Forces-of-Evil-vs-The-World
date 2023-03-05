@@ -1,8 +1,6 @@
+using Assets.Scripts.Enemies;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Commons;
-using static Assets.Commons.Literals;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sr;
     public LayerMask enemyLayers;
     PlayerStats stats;
+    public AudioSource attackAudio;
+    public AudioSource summonAudio;
+    public AudioSource swingAudio;
 
     private float xAxis;
     private float yAxis;
@@ -22,7 +23,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float attackRange = 0.5f;
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float summonDelay = 0.3f;
-    [SerializeField] private float damageDelay = 1f;
+    [SerializeField] private float damageDelay = 0.6f;
+
+    [SerializeField] public string RUN_ANIM;
+    [SerializeField] public string STAND_ANIM;
+    [SerializeField] private string JUMP_ANIM;
+    [SerializeField] private string HURT_ANIM;
+    [SerializeField] private string SUMMON_ANIM;
+    [SerializeField] private string ATTACK_ANIM;
+    [SerializeField] private string STOP_ANIM;
 
     private string currentAnimaton;
 
@@ -44,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        stats = GameObject.Find("player").GetComponent<PlayerStats>();
+        stats = this.GetComponent<PlayerStats>();
     }
 
     void Start()
@@ -60,13 +69,13 @@ public class PlayerMovement : MonoBehaviour
         xAxis = Input.GetAxisRaw("Horizontal");
 
         //space jump key pressed?
-        if (Input.GetKeyDown(KeyCode.Space))
+         if (Input.GetKeyDown(KeyCode.Space))
         {
             isJumpPressed = true;
         }
 
         //space Atatck key pressed?
-        if (Input.GetKeyDown(KeyCode.RightControl))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             isAttackPressed = true;
         }
@@ -87,11 +96,13 @@ public class PlayerMovement : MonoBehaviour
         //Check update movement based on input
         Vector2 vel = new(0, rb2d.velocity.y);
 
+        //Julius works with true + false
+        //Original player works with false + false
         if (xAxis < 0 && !isBeingHurted)
         {
             vel.x = -walkSpeed;
             transform.localScale = new Vector2(-1, 1);
-            sr.flipX = false;
+            sr.flipX = true;
         }
         else if (xAxis > 0 && !isBeingHurted)
         {
@@ -105,9 +116,9 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && !isAttacking && !isBeingHurted && !isSummoning)
         {
             if (xAxis != 0)
-                ChangeAnimationState(Literals.PLAYER_ANIMATIONS.run.ToString());
+                ChangeAnimationState(RUN_ANIM);
             else
-                ChangeAnimationState(Literals.PLAYER_ANIMATIONS.idle.ToString());
+                ChangeAnimationState(STAND_ANIM);
         }
 
         //------------------------------------------
@@ -117,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.AddForce(new Vector2(0, jumpForce));
             isJumpPressed = false;
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.jump.ToString());
+            ChangeAnimationState(JUMP_ANIM);
         }
 
         //Check if trying to summon
@@ -128,9 +139,9 @@ public class PlayerMovement : MonoBehaviour
             if (!isSummoning)
             {
                 isSummoning = true;
-                
-                ChangeAnimationState(Literals.PLAYER_ANIMATIONS.summon.ToString());
 
+                ChangeAnimationState(SUMMON_ANIM);
+                summonAudio.Play();
                 Invoke("SummonComplete", summonDelay);
             }
         }
@@ -149,10 +160,12 @@ public class PlayerMovement : MonoBehaviour
                 isAttacking = true;
 
                 if (isGrounded)
-                    ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString());
+                    ChangeAnimationState(ATTACK_ANIM);
                 else
-                    ChangeAnimationState(Literals.PLAYER_ANIMATIONS.attack.ToString()); // Future air attack
-
+                    ChangeAnimationState(ATTACK_ANIM); // Future air attack
+                                    
+                AttackingLogic();
+                swingAudio.Play();
                 Invoke("AttackComplete", attackDelay);
             }
         }
@@ -165,14 +178,15 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            /* Logica de dañar Enemigos */
-            Debug.Log("hit");
+            var enemyStats = enemy.GetComponent<EnemyStats>();
+            if (enemyStats != null)
+                enemyStats.health -= stats.damage;
+            attackAudio.Play();
         }
     }
 
     void AttackComplete()
     {
-        AttackingLogic();
         isAttacking = false;
     }
 
@@ -186,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
         isBeingHurted = false;
         //Change animation to jump when the player is mid air
         if (!isGrounded)
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.jump.ToString());
+            ChangeAnimationState(JUMP_ANIM);
     }
 
     void HurtBegin()
@@ -200,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
     void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;
-        
+
         animator.Play(newAnimation);
         currentAnimaton = newAnimation;
     }
@@ -219,32 +233,19 @@ public class PlayerMovement : MonoBehaviour
 
         var tags = new List<string>(collision.gameObject.tag.Split(","));
 
-        if (tags.Contains("Enemy"))
+        if (tags.Contains("Enemy") || tags.Contains("Spike") && !isBeingHurted)
         {
             HurtBegin();
-
-            Debug.Log($"Hitted");
-
-            stats.Taking_Damage(Literals.DAMAGE_LIST.common_enemy.ToString());
+            //var enemyStats = collision.gameObject.GetComponent<EnemyStats>();
+            //stats.Taking_Damage(enemyStats);
 
             Vector2 hitted_on = (collision.transform.position - transform.position).normalized;
             rb2d.position -= new Vector2(hitted_on.x, hitted_on.y);
 
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.hurt.ToString());
+            ChangeAnimationState(HURT_ANIM);
 
             Invoke("HurtComplete", damageDelay);
-        }else if (tags.Contains("Spike"))
-        {
-            HurtBegin();
-            /* Calls stats to lower Health According to Collision*/
-            stats.Taking_Damage(Literals.DAMAGE_LIST.spikes.ToString());
 
-            Vector2 hitted_on = (collision.transform.position - transform.position).normalized;
-            rb2d.position -= new Vector2(hitted_on.x, hitted_on.y);
-
-            ChangeAnimationState(Literals.PLAYER_ANIMATIONS.hurt.ToString());
-
-            Invoke("HurtComplete", damageDelay);
         }
     }
     #endregion

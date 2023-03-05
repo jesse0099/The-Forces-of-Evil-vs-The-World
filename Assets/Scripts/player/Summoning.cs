@@ -34,7 +34,7 @@ public class Summoning : MonoBehaviour
         //Apply mana cost on invocation
         if (summonerStats.player_mana - manaCost < 0) return;
 
-        summonerStats.player_mana -= manaCost;
+        summonerStats.SpendMana(manaCost);
 
         //Instantiate the summoned ally
         allyInstance = Instantiate(allyPrefab, transform.position +
@@ -47,12 +47,15 @@ public class Summoning : MonoBehaviour
         //Setting death animation
         invocationStats.deathAnimation = Literals.ALLY_SKELETON_ANIMATIONS.
             ally_skeleton_clothed_death.ToString();
-        invocationStats.damage = 8;
+        invocationStats.damage = 4;
 
         //Adding InvocationMovement
         var invocationMovement = allyInstance.AddComponent<InvocationMovement>();
         invocationMovement.attackDelay = 0.3f;
 
+        //Getting hunter script
+        //var invocationHuntBehavior = allyInstance.GetComponent<Seeker>();
+        //invocationHuntBehavior.obstacleLayer = 3;
 
         allyAnimator = allyInstance.GetComponent<Animator>();
         allyRenderer = allyInstance.GetComponent<SpriteRenderer>();

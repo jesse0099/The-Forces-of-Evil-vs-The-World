@@ -1,5 +1,5 @@
 using Assets.Commons;
-using Assets.Scripts.Enemies.Hero_Knight;
+using Assets.Scripts.Enemies;
 using Assets.Scripts.Player.Invocations;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,32 +64,50 @@ public class HeroKnightMovement : MonoBehaviour
     void AttackLogic(Collision2D collision)
     {
         var tags = new List<string>(collision.gameObject.tag.Split(","));
-
+        InvocationStats allyStats = null;
+        PlayerStats playerStats = null;
         if ((tags.Contains("Player") || tags.Contains("Ally")) && !isAttacking && stats.canDamage
             && stats.health > 0)
         {
-            //Damagin an ally 
+            int targetHealth = 0;
+            //Ally case
+            if (tags.Contains("Ally")) {
+                allyStats = collision.gameObject.GetComponent<InvocationStats>();
+                targetHealth = allyStats.health;
+            }
+            //Player case
+            if (tags.Contains("Player")) {
+                playerStats = collision.gameObject.GetComponent<PlayerStats>();
+                targetHealth = playerStats.player_health; 
+            }
+            //Stop animating attacks on death ally
+            if (targetHealth <= 0) return;
+
+            isAttacking = true;
+            stats.canDamage = false;
+
+            //Attack animation
+            ChangeAnimationState(attackPattern);
+
+            //Damaging an ally 
             if (tags.Contains("Ally"))
-            {
-                var allyStats = collision.gameObject.GetComponent<InvocationStats>();
-                //Stop animating attacks on death ally
-                if (allyStats.health <= 0) return;
-
-                isAttacking = true;
-                stats.canDamage = false;
-                //Attack animation
-                ChangeAnimationState(attackPattern);
-
                 allyStats.health -= stats.damage;
 
+            //Damaging player
+            if (tags.Contains("Player"))
+                playerStats.Taking_Damage(stats);
+
+            if (allyStats != null)
+            {
+                //Allies death management
                 if (allyStats.health <= 0)
                 {
-                    //Avoid death body to cause damage
+                    //Avoid death body to cause damage //Ally
                     allyStats.damage = 0;
-
                     Destroy(collision.gameObject, 1f);
                 }
             }
+
             Invoke("AttackCompleted", attackDelay);
         }
     }

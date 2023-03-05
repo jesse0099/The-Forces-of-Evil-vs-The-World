@@ -25,6 +25,7 @@
             run,
             idle,
             Death,
+            Jump,
             Attack1,
             Attack2,
             Attack3,

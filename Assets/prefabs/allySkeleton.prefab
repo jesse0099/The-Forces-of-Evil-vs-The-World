@@ -70,7 +70,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0029765144, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -81,7 +81,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44, y: 0.52}
+  m_Size: {x: 0.32291847, y: 0.52}
   m_EdgeRadius: 0
 --- !u!50 &5750466221801833164
 Rigidbody2D:
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 495860211
   m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ca4274691df674ee4a7c71fcc3d229d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -171,11 +171,17 @@ MonoBehaviour:
   seekForTagPrio0: Enemy,Knockout
   seekForTagPrio1: Enemy,Boss
   hunterWalkAnimation: ally_skeleton_clothed_walk
+  hunterJumpAnimation: ally_skeleton_clothed_rise
   hunterIdleAnimation: ally_skeleton_clothed_idle
   hunterSafeDistance: 0.01
   huntInterval: 1
   timeSinceLastHunt: 0
   huntSpeed: 1
+  jumpForce: 300
+  rayCastDistance: 3
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &3711859457759783889
 MonoBehaviour:
   m_ObjectHideFlags: 0
