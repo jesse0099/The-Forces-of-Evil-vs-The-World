@@ -29,7 +29,8 @@ public class EntreNewLevel : MonoBehaviour
     {
         if (inDoor && Input.GetKey("e"))
         {
-            SceneManager.LoadScene("lvl1");
+            Debug.Log("levelName: " + levelName);
+            SceneManager.LoadScene(levelName);
         }
     }
 }

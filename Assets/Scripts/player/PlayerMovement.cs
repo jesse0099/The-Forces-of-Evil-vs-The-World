@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         //isGrounded = IsGrounded();
         isGrounded = IsOnGround.isGrounded;
 
+
         //Check update movement based on input
         Vector2 vel = new(0, rb2d.velocity.y);
 
@@ -103,12 +104,14 @@ public class PlayerMovement : MonoBehaviour
             vel.x = -walkSpeed;
             transform.localScale = new Vector2(-1, 1);
             sr.flipX = true;
+
         }
         else if (xAxis > 0 && !isBeingHurted)
         {
             vel.x = walkSpeed;
             transform.localScale = new Vector2(1, 1);
             sr.flipX = false;
+
         }
         else
             vel.x = 0;
